@@ -1,0 +1,819 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Clean light design system - aion-fi.com inspired */
+
+@layer base {
+  :root {
+    /* Hyper-clean light design system */
+    --bg: #FFFFFF;                 /* page background - pure white */
+    --panel: #FFFFFF;              /* navbar/footer/panels - white */
+    --card-bg: #FFFFFF;            /* card background - subtle gray */
+    --card-border: #F3F4F6;        /* card hairline border - very light */
+    --text: #0B0C0E;               /* primary text */
+    --muted: #808080;              /* secondary text */
+    --stroke: #F3F4F6;             /* dividers in tables/layout */
+    
+    /* Brand Colors */
+    --brand-primary: #155DFC;
+    --brand-secondary: #7F22FE;
+    --brand-tertiary: #009966;
+    --brand-quaternary: #F54900;
+    --brand-quinary: #FFB86A;
+    
+    /* Accent colors */
+    --accent: var(--brand-primary);             /* blue accent */
+    --success: var(--brand-tertiary);            
+    --warning: var(--brand-quinary);            
+    --error: var(--brand-quaternary);
+
+    /* Semantic mappings */
+    --background: var(--bg);
+    --foreground: var(--text);
+    
+    --card: var(--card-bg);
+    --card-foreground: var(--text);
+    
+    --popover: var(--panel);
+    --popover-foreground: var(--text);
+    
+    --primary: var(--brand-primary);
+    --primary-foreground: var(--panel);
+    --primary-muted: var(--text) / 0.1;
+    --primary-hover: var(--text) / 0.9;
+    
+    --secondary: var(--brand-secondary);
+    --secondary-foreground: var(--text);
+    --secondary-muted: var(--brand-secondary) / 0.1;
+    --secondary-hover: var(--brand-secondary) / 0.9;
+
+    --tertiary: var(--brand-tertiary);
+    --tertiary-foreground: var(--text);
+    --tertiary-muted: var(--brand-tertiary) / 0.1;
+    --tertiary-hover: var(--brand-tertiary) / 0.9;
+
+    --quaternary: var(--brand-quaternary);
+    --quaternary-foreground: var(--text);
+    --quaternary-muted: var(--brand-quaternary) / 0.1;
+    --quaternary-hover: var(--brand-quaternary) / 0.9;
+    
+    --quinary: var(--brand-quinary);
+    --quinary-foreground: var(--text);
+    --quinary-muted: var(--brand-quinary) / 0.1;
+    --quinary-hover: var(--brand-quinary) / 0.9;
+    
+    /* --muted: var(--stroke); */
+    --muted-foreground: var(--muted);
+    
+    /* --accent: var(--accent); */
+    --accent-foreground: var(--panel);
+    --accent-muted: var(--accent) / 0.1;
+    --accent-hover: var(--accent) / 0.9;
+    
+    /* --success: var(--success); */
+    --success-foreground: var(--panel);
+    --success-muted: var(--success) / 0.1;
+    
+    /* --warning: var(--warning); */
+    --warning-foreground: var(--panel);
+    --warning-muted: var(--warning) / 0.1;
+    
+    /* --destructive: var(--error); */
+    --destructive-foreground: var(--panel);
+    --destructive-muted: var(--error) / 0.1;
+    
+    /* UI elements */
+    --border: var(--stroke);
+    --input: var(--stroke);
+    --ring: var(--accent);
+    
+    /* Shadows */
+    --shadow-none: 0 0 0 0 rgba(0, 0, 0, 0.00);
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.10), 0 1px 2px -1px rgba(0, 0, 0, 0.10);;
+    --shadow: 0 8px 30px rgba(17, 24, 39, 0.08);
+    --shadow-lg: 0 16px 40px rgba(17, 24, 39, 0.12);
+    --shadow-xl: 0 24px 50px rgba(17, 24, 39, 0.16);
+    
+    /* Typography scale - Inter based */
+    --font-size-xs: 0.8125rem;     /* 13px */
+    --font-size-sm: 0.875rem;      /* 14px */
+    --font-size-base: 1rem;        /* 16px */
+    --font-size-lg: 1.125rem;      /* 18px */
+    --font-size-xl: 1.25rem;       /* 20px */
+    --font-size-2xl: 1.75rem;      /* 28px */
+    --font-size-3xl: 2.5rem;       /* 40px */
+    
+    /* Line heights */
+    --line-height-xs: 1.55;        /* 20px for 13px */
+    --line-height-sm: 1.57;        /* 22px for 14px */
+    --line-height-base: 1.625;     /* 26px for 16px */
+    --line-height-lg: 1.56;        /* 28px for 18px */
+    --line-height-xl: 1.4;         /* 28px for 20px */
+    --line-height-2xl: 1.29;       /* 36px for 28px */
+    --line-height-3xl: 1.2;        /* 48px for 40px */
+    
+    /* Spacing scale - 8px base */
+    --space-1: 0.5rem;   /* 8px */
+    --space-2: 1rem;     /* 16px */
+    --space-3: 1.5rem;   /* 24px */
+    --space-4: 2rem;     /* 32px */
+    --space-5: 2.5rem;   /* 40px */
+    --space-6: 3rem;     /* 48px */
+    --space-8: 4rem;     /* 64px */
+    
+    /* Radius */
+    --radius-sm: 0.5rem;
+    --radius: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    @apply bg-[var(--bg)] text-[var(--text)] antialiased;
+  }
+
+  /* Aplicar letter spacing a todos los headings */
+  h1 {
+    @apply tracking-tighter;
+  }
+  h2 {
+    @apply tracking-tighter;
+  }
+  h3 {
+    @apply tracking-tighter;
+  }
+  h4, h5, h6, p, div {
+    @apply tracking-tight;
+  }
+
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--stroke);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--muted);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text);
+  }
+}
+
+@layer components {
+  /* Typography scale */
+  .text-h1 {
+    @apply text-[40px] leading-[48px] font-semibold tracking-tighter; /* 40/48 */
+  }
+  
+  .text-h2 {
+    @apply text-[28px] leading-[36px] font-semibold tracking-tighter; /* 28/36 */
+  }
+  
+  .text-h3 {
+    @apply text-[20px] leading-[28px] font-medium tracking-tighter; /* 20/28 */
+  }
+  
+  .text-body {
+    @apply text-[16px] leading-[26px] tracking-tight; /* 16/26 */
+  }
+  
+  .text-small {
+    @apply text-[13px] leading-[20px] text-[var(--muted)] tracking-tight; /* 13/20 */
+  }
+
+  /* Component utilities */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .btn-primary {
+    background: var(--text);
+    color: var(--panel);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: opacity 200ms;
+  }
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+  .btn-primary:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+  .btn-brand-primary {
+    background: var(--brand-primary);
+    color: var(--panel);
+    border: 1px solid var(--brand-primary);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: opacity 200ms;
+  }
+  .btn-brand-primary:hover {
+    opacity: 0.9;
+  }
+  .btn-brand-primary:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+  
+  .bg-primary-1 {
+    background: color-mix(in srgb, var(--brand-primary) 1%, transparent);
+  }
+  .bg-primary-3 {
+    background: color-mix(in srgb, var(--brand-primary) 3%, transparent);
+  }
+  .bg-primary-5 {
+    background: color-mix(in srgb, var(--brand-primary) 5%, transparent);
+  }
+
+  .bg-primary-10 {
+    background: color-mix(in srgb, var(--brand-primary) 10%, transparent);
+  }
+  .bg-primary-20 {
+    background: color-mix(in srgb, var(--brand-primary) 20%, transparent);
+  }
+  .bg-primary-30 {
+    background: color-mix(in srgb, var(--brand-primary) 30%, transparent);
+  }
+  .bg-primary-40 {
+    background: color-mix(in srgb, var(--brand-primary) 40%, transparent);
+  }
+  .bg-primary-50 {
+    background: color-mix(in srgb, var(--brand-primary) 50%, transparent);
+  }
+  .bg-primary-60 {
+    background: color-mix(in srgb, var(--brand-primary) 60%, transparent);
+  }
+  .bg-primary-70 {
+    background: color-mix(in srgb, var(--brand-primary) 70%, transparent);
+  }
+  .bg-primary-80 {
+    background: color-mix(in srgb, var(--brand-primary) 80%, transparent);
+  }
+  .bg-primary-90 {
+    background: color-mix(in srgb, var(--brand-primary) 90%, transparent);
+  }
+  .bg-primary-100 {
+    background: color-mix(in srgb, var(--brand-primary) 100%, transparent);
+  }
+
+  .bg-secondary-1 {
+    background: color-mix(in srgb, var(--brand-secondary) 1%, transparent);
+  }
+  .bg-secondary-3 {
+    background: color-mix(in srgb, var(--brand-secondary) 3%, transparent);
+  }
+  .bg-secondary-5 {
+    background: color-mix(in srgb, var(--brand-secondary) 5%, transparent);
+  }
+  .bg-secondary-10 {
+    background: color-mix(in srgb, var(--brand-secondary) 10%, transparent);
+  }
+  .bg-secondary-20 {
+    background: color-mix(in srgb, var(--brand-secondary) 20%, transparent);
+  }
+  .bg-secondary-30 {
+    background: color-mix(in srgb, var(--brand-secondary) 30%, transparent);
+  } 
+  .bg-secondary-40 {
+    background: color-mix(in srgb, var(--brand-secondary) 40%, transparent);
+  }
+  .bg-secondary-50 {
+    background: color-mix(in srgb, var(--brand-secondary) 50%, transparent);
+  }
+  .bg-secondary-60 {
+    background: color-mix(in srgb, var(--brand-secondary) 60%, transparent);
+  }
+  .bg-secondary-70 {
+    background: color-mix(in srgb, var(--brand-secondary) 70%, transparent);
+  }
+  .bg-secondary-80 {
+    background: color-mix(in srgb, var(--brand-secondary) 80%, transparent);
+  }
+  .bg-secondary-90 {
+    background: color-mix(in srgb, var(--brand-secondary) 90%, transparent);
+  }
+  .bg-secondary-100 {
+    background: color-mix(in srgb, var(--brand-secondary) 100%, transparent);
+  }
+
+  .bg-tertiary-1 {
+    background: color-mix(in srgb, var(--brand-tertiary) 1%, transparent);
+  }
+  .bg-tertiary-3 {
+    background: color-mix(in srgb, var(--brand-tertiary) 3%, transparent);
+  }
+  .bg-tertiary-5 {
+    background: color-mix(in srgb, var(--brand-tertiary) 5%, transparent);
+  }
+  .bg-tertiary-10 {
+    background: color-mix(in srgb, var(--brand-tertiary) 10%, transparent);
+  }
+  .bg-tertiary-20 {
+    background: color-mix(in srgb, var(--brand-tertiary) 20%, transparent);
+  }
+  .bg-tertiary-40 {
+    background: color-mix(in srgb, var(--brand-tertiary) 40%, transparent);
+  }
+  .bg-tertiary-50 {
+    background: color-mix(in srgb, var(--brand-tertiary) 50%, transparent);
+  }
+  .bg-tertiary-60 {
+    background: color-mix(in srgb, var(--brand-tertiary) 60%, transparent);
+  }
+  .bg-tertiary-70 {
+    background: color-mix(in srgb, var(--brand-tertiary) 70%, transparent);
+  }
+  .bg-tertiary-80 {
+    background: color-mix(in srgb, var(--brand-tertiary) 80%, transparent);
+  }
+  .bg-tertiary-90 {
+    background: color-mix(in srgb, var(--brand-tertiary) 90%, transparent);
+  }
+  .bg-tertiary-100 {
+    background: color-mix(in srgb, var(--brand-tertiary) 100%, transparent);
+  }
+  .bg-quaternary-1 {
+    background: color-mix(in srgb, var(--brand-quaternary) 1%, transparent);
+  }
+  .bg-quaternary-3 {
+    background: color-mix(in srgb, var(--brand-quaternary) 3%, transparent);
+  }
+  .bg-quaternary-5 {
+    background: color-mix(in srgb, var(--brand-quaternary) 5%, transparent);
+  }
+  .bg-quaternary-10 {
+    background: color-mix(in srgb, var(--brand-quaternary) 10%, transparent);
+  }
+  .bg-quaternary-20 {
+    background: color-mix(in srgb, var(--brand-quaternary) 20%, transparent);
+  }
+  .bg-quaternary-30 {
+    background: color-mix(in srgb, var(--brand-quaternary) 30%, transparent);
+  }
+  .bg-quaternary-40 {
+    background: color-mix(in srgb, var(--brand-quaternary) 40%, transparent);
+  }
+  .bg-quinary-1 {
+    background: color-mix(in srgb, var(--brand-quinary) 1%, transparent);
+  }
+  .bg-quinary-3 {
+    background: color-mix(in srgb, var(--brand-quinary) 3%, transparent);
+  }
+  .bg-quinary-5 {
+    background: color-mix(in srgb, var(--brand-quinary) 5%, transparent);
+  }
+  .bg-quinary-10 {
+    background: color-mix(in srgb, var(--brand-quinary) 10%, transparent);
+  }
+  .bg-quinary-20 {
+    background: color-mix(in srgb, var(--brand-quinary) 20%, transparent);
+  }
+  .bg-quinary-30 {
+    background: color-mix(in srgb, var(--brand-quinary) 30%, transparent);
+  }
+  .border-primary-1 {
+    border: 1px solid color-mix(in srgb, var(--brand-primary) 1%, transparent);
+  }
+  .border-primary-3 {
+    border: 1px solid color-mix(in srgb, var(--brand-primary) 3%, transparent);
+  }
+  .border-primary-5 {
+    border: 1px solid color-mix(in srgb, var(--brand-primary) 5%, transparent);
+  }
+  .border-primary-10 {
+    border: 1px solid color-mix(in srgb, var(--brand-primary) 10%, transparent);
+  }
+  .border-primary-20 {
+    border: 1px solid color-mix(in srgb, var(--brand-primary) 20%, transparent);
+  }
+  .border-primary-30 {
+    border: 1px solid color-mix(in srgb, var(--brand-primary) 30%, transparent);
+  }
+  .border-primary-40 {
+    border: 1px solid color-mix(in srgb, var(--brand-primary) 40%, transparent);
+  }
+  .border-primary-50 {
+    border: 1px solid color-mix(in srgb, var(--brand-primary) 50%, transparent);
+  }
+  .border-primary-60 {
+    border: 1px solid color-mix(in srgb, var(--brand-primary) 60%, transparent);
+  }
+  .border-primary-70 {
+    border: 1px solid color-mix(in srgb, var(--brand-primary) 70%, transparent);
+  }
+  .border-primary-80 {
+    border: 1px solid color-mix(in srgb, var(--brand-primary) 80%, transparent);
+  }
+  .border-primary-90 {
+    border: 1px solid color-mix(in srgb, var(--brand-primary) 90%, transparent);
+  }
+  .border-primary-100 {
+    border: 1px solid color-mix(in srgb, var(--brand-primary) 100%, transparent);
+  }
+  .border-tertiary-1 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 1%, transparent);
+  }
+  .border-tertiary-3 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 3%, transparent);
+  }
+  .border-tertiary-5 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 5%, transparent);
+  }
+  .border-tertiary-10 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 10%, transparent);
+  }
+  .border-tertiary-20 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 20%, transparent);
+  }
+  .border-tertiary-40 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 40%, transparent);
+  }
+  .border-tertiary-50 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 50%, transparent);
+  }
+  .border-tertiary-60 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 60%, transparent);
+  }
+  .border-tertiary-70 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 70%, transparent);
+  }
+  .border-tertiary-80 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 80%, transparent);
+  }
+  .border-tertiary-90 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 90%, transparent);
+  }
+  .border-tertiary-100 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 100%, transparent);
+  }
+
+  /* Animaciones personalizadas */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-slide-down {
+    animation: slideDown 0.4s ease-out;
+  }
+  
+  .animate-slide-down-with-push {
+    animation: slideDownWithPush 0.2s ease-in-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+  
+  .animate-bounce-in {
+    animation: bounceIn 0.6s ease-out;
+  }
+  
+  .animate-gentle-push {
+    animation: gentlePush 0.2s ease-out 0.2s both;
+  }
+  
+  .animate-push-down {
+    animation: smoothDown 0.2s ease-in-out 0.1s both;
+  }
+  
+  .animate-smooth-down {
+    animation: smoothDown 0.2s ease-out 0.1s ;
+  }
+  .border-secondary-1 {
+    border: 1px solid color-mix(in srgb, var(--brand-secondary) 1%, transparent);
+  }
+  .border-secondary-3 {
+    border: 1px solid color-mix(in srgb, var(--brand-secondary) 3%, transparent);
+  }
+  .border-secondary-5 {
+    border: 1px solid color-mix(in srgb, var(--brand-secondary) 5%, transparent);
+  }
+  .border-secondary-10 {
+    border: 1px solid color-mix(in srgb, var(--brand-secondary) 10%, transparent);
+  }
+  .border-secondary-20 {
+    border: 1px solid color-mix(in srgb, var(--brand-secondary) 20%, transparent);
+  }
+  .border-secondary-30 {
+    border: 1px solid color-mix(in srgb, var(--brand-secondary) 30%, transparent);
+  }
+  .border-secondary-40 {
+    border: 1px solid color-mix(in srgb, var(--brand-secondary) 40%, transparent);
+  }
+  .border-secondary-50 {
+    border: 1px solid color-mix(in srgb, var(--brand-secondary) 50%, transparent);
+  }
+  .border-secondary-60 {
+    border: 1px solid color-mix(in srgb, var(--brand-secondary) 60%, transparent);
+  }
+  .border-secondary-70 {
+    border: 1px solid color-mix(in srgb, var(--brand-secondary) 70%, transparent);
+  }
+  .border-secondary-80 {
+    border: 1px solid color-mix(in srgb, var(--brand-secondary) 80%, transparent);
+  }
+  .border-secondary-90 {
+    border: 1px solid color-mix(in srgb, var(--brand-secondary) 90%, transparent);
+  }
+  .border-secondary-100 {
+    border: 1px solid color-mix(in srgb, var(--brand-secondary) 100%, transparent);
+  }
+  .border-tertiary-1 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 1%, transparent);
+  }
+  .border-tertiary-3 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 3%, transparent);
+  }
+  .border-tertiary-5 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 5%, transparent);
+  }
+  .border-tertiary-10 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 10%, transparent);
+  }
+  .border-tertiary-20 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 20%, transparent);
+  }
+  .border-tertiary-40 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 40%, transparent);
+  }
+  .border-tertiary-50 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 50%, transparent);
+  }
+  .border-tertiary-60 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 60%, transparent);
+  }
+  .border-tertiary-70 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 70%, transparent);
+  }
+  .border-tertiary-80 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 80%, transparent);
+  }
+  .border-tertiary-90 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 90%, transparent);
+  }
+  .border-tertiary-100 {
+    border: 1px solid color-mix(in srgb, var(--brand-tertiary) 100%, transparent);
+  }
+  .border-quaternary-1 {
+    border: 1px solid color-mix(in srgb, var(--brand-quaternary) 1%, transparent);
+  }
+  .border-quaternary-3 {
+    border: 1px solid color-mix(in srgb, var(--brand-quaternary) 3%, transparent);
+  }
+  .border-quaternary-5 {
+    border: 1px solid color-mix(in srgb, var(--brand-quaternary) 5%, transparent);
+  }
+  .border-quaternary-10 {
+    border: 1px solid color-mix(in srgb, var(--brand-quaternary) 10%, transparent);
+  }
+  .border-quaternary-20 {
+    border: 1px solid color-mix(in srgb, var(--brand-quaternary) 20%, transparent);
+  }
+  .border-quaternary-30 {
+    border: 1px solid color-mix(in srgb, var(--brand-quaternary) 30%, transparent);
+  }
+  .border-quaternary-40 {
+    border: 1px solid color-mix(in srgb, var(--brand-quaternary) 40%, transparent);
+  }
+  .border-quaternary-50 {
+    border: 1px solid color-mix(in srgb, var(--brand-quaternary) 50%, transparent);
+  }
+  .border-quaternary-60 {
+    border: 1px solid color-mix(in srgb, var(--brand-quaternary) 60%, transparent);
+  }
+  .border-quinary-1 {
+    border: 1px solid color-mix(in srgb, var(--brand-quinary) 1%, transparent);
+  }
+  .border-quinary-3 {
+    border: 1px solid color-mix(in srgb, var(--brand-quinary) 3%, transparent);
+  }
+  .border-quinary-5 {
+    border: 1px solid color-mix(in srgb, var(--brand-quinary) 5%, transparent);
+  }
+  .border-quinary-10 {
+    border: 1px solid color-mix(in srgb, var(--brand-quinary) 10%, transparent);
+  }
+  .border-quinary-20 {
+    border: 1px solid color-mix(in srgb, var(--brand-quinary) 20%, transparent);
+  }
+  .border-quinary-30 {
+    border: 1px solid color-mix(in srgb, var(--brand-quinary) 30%, transparent);
+  }
+  .border-quinary-40 {
+    border: 1px solid color-mix(in srgb, var(--brand-quinary) 40%, transparent);
+  }
+  .border-quinary-50 {
+    border: 1px solid color-mix(in srgb, var(--brand-quinary) 50%, transparent);
+  }
+  .border-quinary-60 {
+    border: 1px solid color-mix(in srgb, var(--brand-quinary) 60%, transparent);
+  }
+
+  .btn-secondary {
+    background: var(--panel);
+    border: 1px solid var(--stroke);
+    color: var(--text);
+    opacity: 0.8;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: background-color 200ms;
+  }
+  .btn-secondary:hover {
+    background: #F2F5FA;
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: all 200ms;
+  }
+  .btn-ghost:hover {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    border: 1px solid var(--stroke);
+    background: var(--panel);
+  }
+
+  .badge-success {
+    background: color-mix(in srgb, var(--success) 10%, transparent);;
+    color: var(--success);
+    border-color: color-mix(in srgb, var(--success) 20%, transparent);;
+  }
+
+  .badge-warning {
+    background: color-mix(in srgb, var(--warning) 10%, transparent);;
+    color: var(--warning);
+    border-color: color-mix(in srgb, var(--warning) 20%, transparent);;
+  }
+
+  .badge-error {
+    background: color-mix(in srgb, var(--error) 10%, transparent);;
+    color: var(--error);
+    border-color: color-mix(in srgb, var(--error) 20%, transparent);;
+  }
+
+  .badge-accent {
+    background: color-mix(in srgb, var(--accent) 10%, transparent);;
+    color: var(--accent);
+    border-color: color-mix(in srgb, var(--accent) 20%, transparent);;
+  }
+
+  .badge-gray {
+    background: #f9fafb;
+    color: #374151;
+    border-color: #e5e7eb;
+  }
+}
+
+/* Keyframes para animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDownWithPush {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes gentlePush {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pushDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes smoothDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(3px);
+  }
+}
