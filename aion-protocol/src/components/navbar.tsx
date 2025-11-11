@@ -130,7 +130,7 @@ export function Navbar() {
             ].map((item, index) => (
               <motion.button
                 key={item.id}
-                onClick={() => item.id === "docs" ? window.open("https://conomyhq.gitbook.io/aion-fi/", "_blank") : scrollToSection(item.id)}
+                onClick={() => item.id === "docs" ? window.open("https://docs.aion.fi/", "_blank") : scrollToSection(item.id)}
                 className="relative text-sm text-gray-600 hover:text-gray-900 transition-all duration-300 group"
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
